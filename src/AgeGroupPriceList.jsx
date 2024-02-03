@@ -21,7 +21,7 @@ export default function AgeGroupPriceList() {
         const agesArray = data.map(item => item.ageGroup);
         const ageResult = getNumberIntervals(agesArray)
         setOverlapping(ageResult?.overlapDataIndex)
-        setNotInClude(ageResult?.allNum?.length>0)
+        setNotInClude(ageResult?.notInclude?.length>0)
     }
     const adding = () => {
         const newResult = [...result]

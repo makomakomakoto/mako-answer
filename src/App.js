@@ -30,15 +30,9 @@ function App() {
         if (Array.isArray(parsedIntervals)) {
           const ageResult = getNumberIntervals(parsedIntervals);
           setAgeResult(ageResult);
-  
-          console.log('重疊區間：');
-          ageResult?.overlap.map(([start, end]) => {
-            console.log(`[${start}, ${end}]`);
-          });
-  
-          console.log('未包含區間：');
-          ageResult?.allNum.map(([start, end]) => {
-            console.log(`[${start}, ${end}]`);
+          console.log({
+            overlap: ageResult.overlap,
+            notInclude: ageResult.notInclude
           });
         } else {
           window.alert('輸入的不是有效的數字區間陣列');
@@ -77,7 +71,7 @@ function App() {
         </div>
         <div>
           未包含:
-          {ageResult?.allNum.map(([start, end], index) => (
+          {ageResult?.notInclude.map(([start, end], index) => (
             <p key={index}>{`[${start}, ${end}]`}</p>
           ))}
         </div>

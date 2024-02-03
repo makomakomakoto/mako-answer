@@ -1,3 +1,12 @@
+$Orange: #f85514;
+$Border_Color: #a3a3a3;
+$Border_Dashed_Color: #757575;
+$Red: red;
+$Add_Button: #35d4c2;
+$BG_Color: #dfdfdf;
+$Word_Color: #616161;
+$Alert: #ffe2d7;
+
 
 %flexCenterCenter{
   display: flex;
@@ -10,16 +19,14 @@
   align-items: flex-start;
 }
 %borderInputGroup{
-  border: 1px solid #a3a3a3;
+  border: 1px solid $Border_Color;
   border-radius: 5px;
 }
 
 
 .App {
+  @extend %flexCenterStart;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
   margin-top: 50px;
   margin-left: 50px;
@@ -34,27 +41,23 @@
       }
     }
     div{
-      display: flex;
+      @extend %flexCenterCenter;
       justify-content: flex-start;
-      align-items: center;
       width: 100%;
     }
   }
 }
 .AgeGroupPriceList{
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  @extend %flexCenterStart;
   flex-direction: column;
-  border: 2px dashed #757575;
+  border: 2px dashed $Border_Dashed_Color;
   width: fit-content;
   height: fit-content;
   padding: 0 40px;
   margin-bottom: 50px;
   .listTitle{
-    display: flex;
+    @extend %flexCenterStart;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     font-size: 1.25rem;
     font-weight: bold;
@@ -62,15 +65,15 @@
   button.addButton , p.removeButton{
     @extend %flexCenterCenter;
     font-size: 1.25rem;
-    color: #35d4c2;
+    color: $Add_Button;
     font-weight: bold;
   }
   button.disabled{
     cursor: auto;
-    color: #616161;
+    color: $Word_Color;
   }
   p.removeButton{
-    color: red;
+    color: $Red;
     font-weight: 600;
     cursor: pointer;
   }
@@ -80,10 +83,9 @@
   .container{
     @extend %flexCenterStart;
     .inputConTitle{
-      @extend %flexCenterCenter;
+      @extend %flexCenterStart;
       flex-direction: column;
-      align-items: flex-start;
-      color:#a3a3a3;
+      color:$Border_Color;
       margin: 15px 0;
       width: fit-content;
       p{
@@ -101,11 +103,11 @@
           border-right-color: transparent;
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
-          background-color: #dfdfdf;
+          background-color: $BG_Color;
           height: 48px;
           width: 50px;
           font-size: 1.125rem;
-          color:#616161;
+          color:$Word_Color;
         }
         input{
           @extend %borderInputGroup;
@@ -118,7 +120,7 @@
           padding-left: 10px;
         }
         input:focus, input.focus{
-          border: 1px solid #f85514;
+          border: 1px solid $Orange;
           font-size: 1.125rem;
         }
         input:focus-visible{
@@ -130,14 +132,14 @@
         width: 252px;
         .selectTitle{
           @extend %flexCenterCenter;
-          border: 1px solid #a3a3a3;
+          border: 1px solid $Border_Color;
           border-right: none;
           border-left: none;
-          background-color: #dfdfdf;
+          background-color: $BG_Color;
           height: 48px;
           width: 10%;
           font-size: 1.125rem;
-          color:#616161;
+          color:$Word_Color;
         }
         select.left{
           @extend %borderInputGroup;
@@ -160,12 +162,12 @@
           padding-left: 10px;
         }
         select:focus, select.focus{
-          border: 1px solid #f85514;
+          border: 1px solid $Orange;
           font-size: 1.125rem;
         }
         select {
           option:focus-visible, option:focus{
-            background-color: #f85514;
+            background-color: $Orange;
           }
         }
       }
@@ -173,8 +175,8 @@
         border-radius: 5px;
         width: 252px;
         text-align: left;
-        background-color: #ffe2d7;
-        color: #f85514;
+        background-color: $Alert;
+        color: $Orange;
         p{
           text-align: left;
         }

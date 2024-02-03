@@ -5,7 +5,7 @@ export const thousand = (value, isNegativeOk)=>{
     if(isNegativeOk){
         newValue = value.replace(/[^\d\-.]/g, '');
     }else{
-        newValue = value.replace(/[^\d\.]/g, '');
+        newValue = value.replace(/[^\d.]/g, '');
     }
     const dot = value.split('.').length - 1;
     const minus = value.split('-').length - 1;
@@ -88,7 +88,7 @@ export const getNumberIntervals = (intervals) => {
   
     const ageResult = {
       overlap: a ?? [],
-      allNum: notInClude ?? [],
+      notInclude: notInClude ?? [],
       overlapDataIndex: overlapDataIndex
     };
   
