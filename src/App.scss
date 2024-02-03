@@ -1,0 +1,195 @@
+
+%flexCenterCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%flexCenterStart{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+%borderInputGroup{
+  border: 1px solid #a3a3a3;
+  border-radius: 5px;
+}
+
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 50px;
+  div{
+    div.ageRange{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      textarea{
+        width: 300px;
+        height: 100px;
+      }
+    }
+    div{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+.AgeGroupPriceList{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 2px dashed #757575;
+  width: fit-content;
+  height: fit-content;
+  padding: 0 40px;
+  margin-bottom: 50px;
+  .listTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  button.addButton , p.removeButton{
+    @extend %flexCenterCenter;
+    font-size: 1.25rem;
+    color: #35d4c2;
+    font-weight: bold;
+  }
+  button.disabled{
+    cursor: auto;
+    color: #616161;
+  }
+  p.removeButton{
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  hr{
+    width: 100%
+  }
+  .container{
+    @extend %flexCenterStart;
+    .inputConTitle{
+      @extend %flexCenterCenter;
+      flex-direction: column;
+      align-items: flex-start;
+      color:#a3a3a3;
+      margin: 15px 0;
+      width: fit-content;
+      p{
+        width: 100%;
+        text-align: right;
+        font-size: 0.75rem;
+        margin: 0.5rem;
+      }
+      .priceInput{
+        @extend %flexCenterCenter;
+        width: 252px;
+        .inputTitle{
+          @extend %flexCenterCenter;
+          @extend %borderInputGroup;
+          border-right-color: transparent;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          background-color: #dfdfdf;
+          height: 48px;
+          width: 50px;
+          font-size: 1.125rem;
+          color:#616161;
+        }
+        input{
+          @extend %borderInputGroup;
+          border-left-color: transparent;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          width: 200px;
+          height: 46px;
+          font-size: 1.125rem;
+          padding-left: 10px;
+        }
+        input:focus, input.focus{
+          border: 1px solid #f85514;
+          font-size: 1.125rem;
+        }
+        input:focus-visible{
+          outline: none;
+        }
+      }
+      .ageGroupSelect{
+        @extend %flexCenterCenter;
+        width: 252px;
+        .selectTitle{
+          @extend %flexCenterCenter;
+          border: 1px solid #a3a3a3;
+          border-right: none;
+          border-left: none;
+          background-color: #dfdfdf;
+          height: 48px;
+          width: 10%;
+          font-size: 1.125rem;
+          color:#616161;
+        }
+        select.left{
+          @extend %borderInputGroup;
+          border-right-color: transparent;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          width: 45%;
+          height: 50px;
+          font-size: 1.125rem;
+          padding-left: 10px;
+        }
+        select.right{
+          @extend %borderInputGroup;
+          border-left-color: transparent;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          width: 45%;
+          height: 50px;
+          font-size: 1.125rem;
+          padding-left: 10px;
+        }
+        select:focus, select.focus{
+          border: 1px solid #f85514;
+          font-size: 1.125rem;
+        }
+        select {
+          option:focus-visible, option:focus{
+            background-color: #f85514;
+          }
+        }
+      }
+      .alertCon{
+        border-radius: 5px;
+        width: 252px;
+        text-align: left;
+        background-color: #ffe2d7;
+        color: #f85514;
+        p{
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+button{
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.icon{
+  width: 2rem;
+}
